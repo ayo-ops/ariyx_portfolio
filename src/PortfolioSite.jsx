@@ -38,64 +38,7 @@ import {
    1. EDIT YOUR PROJECTS HERE — add as many as you want.
    Drop screenshots in /public/projects/ using matching filenames.
    ============================================================ */
-// const PROJECTS = [
-//   {
-//     id: 1,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. Roofing]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website Design", "GoHighLevel", "Funnel"],
-//     image: "/projects/project-1.jpg",
-//     url: "#",
-//   },
-//   {
-//     id: 2,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. HVAC]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website", "Landing Page", "CRM"],
-//     image: "/projects/project-2.jpg",
-//     url: "#",
-//   },
-//   {
-//     id: 3,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. Plumbing]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website", "Funnel", "Automation"],
-//     image: "/projects/project-3.jpg",
-//     url: "#",
-//   },
-//   {
-//     id: 4,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. Electrical]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website", "GHL", "Lead Capture"],
-//     image: "/projects/project-4.jpg",
-//     url: "#",
-//   },
-//   {
-//     id: 5,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. Cleaning]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website", "CRM", "Automation"],
-//     image: "/projects/project-5.jpg",
-//     url: "#",
-//   },
-//   {
-//     id: 6,
-//     name: "[PROJECT NAME]",
-//     industry: "[Industry, e.g. Real Estate]",
-//     description: "[SHORT DESCRIPTION of what you built and the outcome]",
-//     services: ["Website", "Funnel", "Integration"],
-//     image: "/projects/project-6.jpg",
-//     url: "#",
-//   },
-//   // Add project 7, 8, 9... following the same shape. The showcase
-//   // below automatically handles any number of entries.
-// ];
+
 
 const PROJECTS = [
   {
@@ -268,16 +211,9 @@ const TESTIMONIALS = [
       "Professional, reliable, and very easy to communicate with. Ayomide took the time to understand the project instead of rushing straight into the build.",
     rating: 5,
   },
+ 
   {
     id: 10,
-    name: "[CLIENT NAME]",
-    business: "[CLIENT BUSINESS / INDUSTRY]",
-    review:
-      "[REPLACE WITH A SPECIFIC, PERMISSIONED CLIENT QUOTE THAT MENTIONS THE PROBLEM, THE WORK, OR THE RESULT.]",
-    rating: 5,
-  },
-  {
-    id: 11,
     name: "Olivia Bennett",
     business: "Plumbing Company",
     review:
@@ -413,6 +349,7 @@ const PROCESS_STEPS = [
 const INDUSTRIES = [
   "Roofing",
   "HVAC",
+  "Med Spa",
   "Plumbing",
   "Electrical",
   "Cleaning",
