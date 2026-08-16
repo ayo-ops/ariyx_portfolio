@@ -384,12 +384,12 @@ const FOOTER_LINKS = [
 
 /* ---------- Accent color system (card color variety) ---------- */
 const ACCENTS = {
-  teal:    { text: "text-teal-300",    bg: "bg-teal-400/[0.1]",    border: "border-teal-400/30",    glow: "shadow-[0_0_30px_-10px_rgba(45,217,197,0.45)]",  dot: "bg-teal-400" },
-  blue:    { text: "text-blue-300",    bg: "bg-blue-400/[0.1]",    border: "border-blue-400/30",    glow: "shadow-[0_0_30px_-10px_rgba(96,165,250,0.45)]",  dot: "bg-blue-400" },
-  violet:  { text: "text-violet-300",  bg: "bg-violet-400/[0.1]",  border: "border-violet-400/30",  glow: "shadow-[0_0_30px_-10px_rgba(167,139,250,0.45)]", dot: "bg-violet-400" },
-  amber:   { text: "text-amber-300",   bg: "bg-amber-400/[0.1]",   border: "border-amber-400/30",   glow: "shadow-[0_0_30px_-10px_rgba(251,191,36,0.45)]",  dot: "bg-amber-400" },
-  rose:    { text: "text-rose-300",    bg: "bg-rose-400/[0.1]",    border: "border-rose-400/30",    glow: "shadow-[0_0_30px_-10px_rgba(251,113,133,0.45)]", dot: "bg-rose-400" },
-  emerald: { text: "text-emerald-300", bg: "bg-emerald-400/[0.1]", border: "border-emerald-400/30", glow: "shadow-[0_0_30px_-10px_rgba(52,211,153,0.45)]",  dot: "bg-emerald-400" },
+  red:     { text: "text-red-300",    bg: "bg-red-500/[0.1]",    border: "border-red-500/30",    glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.45)]",  dot: "bg-red-500" },
+  blue:    { text: "text-red-300",    bg: "bg-red-500/[0.08]",   border: "border-red-500/25",   glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.35)]",  dot: "bg-red-500" },
+  violet:  { text: "text-red-200",    bg: "bg-red-500/[0.06]",   border: "border-red-500/20",   glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.3)]", dot: "bg-red-400" },
+  amber:   { text: "text-red-300",    bg: "bg-red-500/[0.1]",    border: "border-red-500/30",    glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.45)]",  dot: "bg-red-500" },
+  rose:    { text: "text-red-200",    bg: "bg-red-500/[0.06]",   border: "border-red-500/20",   glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.3)]", dot: "bg-red-400" },
+  emerald: { text: "text-red-300", bg: "bg-red-500/[0.08]", border: "border-red-500/25", glow: "shadow-[0_0_30px_-10px_rgba(239,68,68,0.35)]", dot: "bg-red-500" },
 };
 
 /* ---------- Scroll reveal hook ---------- */
@@ -455,7 +455,7 @@ function StatBlock({ stat, delay }) {
   const count = useCountUp(stat.end, visible);
   return (
     <Reveal delay={delay}>
-      <div ref={ref} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 hover:border-teal-400/30 transition-colors duration-300">
+      <div ref={ref} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 hover:border-red-500/30 transition-colors duration-300">
         {stat.isText ? (
           <div className="font-[Space_Grotesk,sans-serif] text-3xl md:text-4xl font-medium text-white leading-tight">
             {stat.text}
@@ -477,7 +477,7 @@ function StatBlock({ stat, delay }) {
 /* ---------- Logo mark (falls back to icon if no logo image yet) ---------- */
 function LogoMark({ className = "w-5 h-5" }) {
   const [failed, setFailed] = useState(false);
-  if (failed) return <Terminal className={`${className} text-teal-400`} strokeWidth={2} />;
+  if (failed) return <Terminal className={`${className} text-red-400`} strokeWidth={2} />;
   return (
     <img
       src={LOGO_IMAGE}
@@ -492,8 +492,8 @@ function LogoMark({ className = "w-5 h-5" }) {
 function Eyebrow({ index, children }) {
   return (
     <div className="flex items-center gap-3 mb-6">
-      <span className="font-mono text-lg tracking-[0.15em] text-teal-400">{index}</span>
-      <span className="h-px w-10 bg-gradient-to-r from-teal-400/60 to-transparent" />
+      <span className="font-mono text-lg tracking-[0.15em] text-red-400">{index}</span>
+      <span className="h-px w-10 bg-gradient-to-r from-red-500/60 to-transparent" />
       <span className="font-mono text-lg tracking-[0.15em] text-white/60 uppercase">{children}</span>
     </div>
   );
@@ -506,7 +506,7 @@ function SmartImage({ src, alt, className = "" }) {
     return (
       <div className={`flex items-center justify-center bg-gradient-to-br from-[#0F1B24] to-[#0A0E14] ${className}`}>
         <div className="text-center px-4">
-          <Globe className="w-9 h-9 text-teal-400/30 mx-auto mb-3" strokeWidth={1.5} />
+          <Globe className="w-9 h-9 text-red-400/30 mx-auto mb-3" strokeWidth={1.5} />
           <span className="font-mono text-base tracking-wide text-white/25">{src}</span>
         </div>
       </div>
@@ -518,13 +518,13 @@ function SmartImage({ src, alt, className = "" }) {
 /* ---------- Video testimonial placeholder ---------- */
 function VideoTestimonialCard() {
   return (
-    <section aria-label="Client video testimonial" className="border-y border-white/[0.06] bg-[#0B111A] px-6 md:px-8 py-8">
+    <section aria-label="Client video testimonial" className="border-y border-white/[0.06] bg-[#100B0D] px-6 md:px-8 py-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-5 md:gap-8">
         <a
           href={VIDEO_TESTIMONIAL.src}
           target="_blank"
           rel="noreferrer"
-          className="group relative w-full md:w-72 aspect-video shrink-0 overflow-hidden rounded-xl border border-teal-400/25 bg-[#0A0E14] hover:border-teal-400/60 transition-colors"
+          className="group relative w-full md:w-72 aspect-video shrink-0 overflow-hidden rounded-xl border border-red-500/25 bg-[#0A0E14] hover:border-red-500/60 transition-colors"
           aria-label={`Play video testimonial from ${VIDEO_TESTIMONIAL.client}`}
         >
           <SmartImage
@@ -533,16 +533,16 @@ function VideoTestimonialCard() {
             className="w-full h-full object-cover opacity-75 group-hover:opacity-100 transition-opacity"
           />
           <span className="absolute inset-0 flex items-center justify-center bg-[#0A0E14]/25 group-hover:bg-[#0A0E14]/10 transition-colors">
-            <span className="w-12 h-12 rounded-full bg-teal-400 text-[#0A0E14] flex items-center justify-center shadow-[0_0_30px_-6px_rgba(45,217,197,0.8)]">
+            <span className="w-12 h-12 rounded-full bg-red-500 text-[#090909] flex items-center justify-center shadow-[0_0_30px_-6px_rgba(239,68,68,0.8)]">
               <Play className="w-5 h-5 ml-0.5 fill-current" />
             </span>
           </span>
-          <span className="absolute left-3 top-3 rounded-full border border-teal-400/30 bg-[#0B121B]/90 px-2.5 py-1 font-mono text-[11px] tracking-wider text-teal-300">
+          <span className="absolute left-3 top-3 rounded-full border border-red-500/30 bg-[#140B0D]/90 px-2.5 py-1 font-mono text-[11px] tracking-wider text-red-300">
             VIDEO TESTIMONIAL
           </span>
         </a>
         <div>
-          <p className="font-mono text-sm tracking-[0.18em] text-teal-300/80 uppercase">Client proof</p>
+          <p className="font-mono text-sm tracking-[0.18em] text-red-300/80 uppercase">Client proof</p>
           <h2 className="mt-2 font-[Space_Grotesk,sans-serif] text-2xl md:text-3xl text-white font-medium">Hear what the build changed for a real client.</h2>
           <p className="mt-2 text-lg text-white/55 max-w-2xl">{VIDEO_TESTIMONIAL.caption}</p>
           <p className="mt-3 font-mono text-sm text-white/40">{VIDEO_TESTIMONIAL.client} · {VIDEO_TESTIMONIAL.business}</p>
@@ -557,7 +557,7 @@ function VideoTestimonialCard() {
 function IndustriesMarquee() {
   const loop = [...INDUSTRIES, ...INDUSTRIES];
   return (
-    <div className="border-y border-white/[0.06] bg-[#0B111A] py-10 overflow-hidden">
+    <div className="border-y border-white/[0.06] bg-[#100B0D] py-10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-8 mb-8 text-center">
         <span className="font-mono text-xl tracking-[0.25em] text-white/65">
           BUILDING SYSTEMS FOR SERVICE BUSINESSES
@@ -572,7 +572,7 @@ function IndustriesMarquee() {
               key={i}
               className="flex items-center gap-2.5 rounded-full border border-white/[0.08] px-6 py-3 shrink-0"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
               <span className="text-white/60 text-xl whitespace-nowrap">{industry}</span>
             </div>
           ))}
@@ -586,10 +586,10 @@ function IndustriesMarquee() {
 function FloatingBadge({ icon: Icon, label, className = "", delay = "0s", duration = "6s" }) {
   return (
     <div
-      className={`absolute flex items-center gap-2 rounded-xl border border-teal-400/25 bg-[#0B121B]/95 backdrop-blur-sm px-4 py-2.5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] ${className}`}
+      className={`absolute flex items-center gap-2 rounded-xl border border-red-500/25 bg-[#140B0D]/95 backdrop-blur-sm px-4 py-2.5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] ${className}`}
       style={{ animation: `float ${duration} ease-in-out infinite`, animationDelay: delay }}
     >
-      <Icon className="w-4 h-4 text-teal-400 shrink-0" />
+      <Icon className="w-4 h-4 text-red-400 shrink-0" />
       <span className="font-mono text-base text-white/80 whitespace-nowrap">{label}</span>
     </div>
   );
@@ -601,19 +601,19 @@ function HeroVisual() {
     <div className="relative w-full h-[440px] sm:h-[500px] lg:h-[560px]">
       <div
         className="pointer-events-none absolute inset-0 rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle at 50% 50%, #2CD9C5 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(circle at 50% 50%, #EF4444 0%, transparent 60%)" }}
       />
 
       {/* connection lines */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500" fill="none">
-        <line x1="250" y1="250" x2="70" y2="90" stroke="#2CD9C5" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
-        <line x1="250" y1="250" x2="430" y2="80" stroke="#2CD9C5" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
-        <line x1="250" y1="250" x2="60" y2="400" stroke="#2CD9C5" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
-        <line x1="250" y1="250" x2="440" y2="420" stroke="#2CD9C5" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
+        <line x1="250" y1="250" x2="70" y2="90" stroke="#EF4444" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
+        <line x1="250" y1="250" x2="430" y2="80" stroke="#EF4444" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
+        <line x1="250" y1="250" x2="60" y2="400" stroke="#EF4444" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
+        <line x1="250" y1="250" x2="440" y2="420" stroke="#EF4444" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="5 6" className="dash-flow" />
       </svg>
 
       {/* center dashboard card */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[320px] rounded-2xl border border-teal-400/25 bg-[#0B121B]/95 backdrop-blur-sm shadow-[0_0_70px_-15px_rgba(45,217,197,0.4)] overflow-hidden">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[320px] rounded-2xl border border-red-500/25 bg-[#140B0D]/95 backdrop-blur-sm shadow-[0_0_70px_-15px_rgba(239,68,68,0.4)] overflow-hidden">
         <div className="flex items-center gap-2 px-5 py-3.5 border-b border-white/[0.07]">
           <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
           <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
@@ -623,8 +623,8 @@ function HeroVisual() {
         <div className="p-5 space-y-4">
           <div className="flex items-center justify-between">
             <span className="font-mono text-base text-white/60">Lead Pipeline</span>
-            <span className="flex items-center gap-1.5 font-mono text-[11px] text-teal-300">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+            <span className="flex items-center gap-1.5 font-mono text-[11px] text-red-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
               Live
             </span>
           </div>
@@ -638,14 +638,14 @@ function HeroVisual() {
               <div key={row.label}>
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="flex items-center gap-2 text-lg text-white/60">
-                    <Icon className="w-3.5 h-3.5 text-teal-400" strokeWidth={2} />
+                    <Icon className="w-3.5 h-3.5 text-red-400" strokeWidth={2} />
                     {row.label}
                   </span>
                   <span className="font-mono text-base text-white/60">{row.value}%</span>
                 </div>
                 <div className="h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-300"
+                    className="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400"
                     style={{ width: `${row.value}%`, animation: `grow 1.4s ease-out ${i * 150 + 200}ms forwards`, transform: "scaleX(0)", transformOrigin: "left" }}
                   />
                 </div>
@@ -666,7 +666,7 @@ function HeroVisual() {
 /* ---------- Capability card ---------- */
 function CapabilityCard({ cap, delay }) {
   const Icon = cap.icon;
-  const a = ACCENTS[cap.color] || ACCENTS.teal;
+  const a = ACCENTS[cap.color] || ACCENTS.red;
   return (
     <Reveal delay={delay}>
       <div className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 hover:border-white/[0.16] hover:bg-white/[0.03] hover:-translate-y-1 transition-all duration-300">
@@ -703,22 +703,22 @@ function FeaturedWork({ onOpenModal }) {
           <div className="flex items-center gap-2 rounded-t-xl border border-white/[0.07] border-b-0 bg-[#111923] px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300/70" />
-            <span className="h-2.5 w-2.5 rounded-full bg-teal-300/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
             <span className="ml-3 hidden flex-1 rounded-md border border-white/[0.08] bg-[#0A0E14] px-3 py-1 font-mono text-xs text-white/30 sm:block">
               {active.url && active.url !== "#" ? active.url.replace(/^https?:\/\//, "") : "your-project-url.com"}
             </span>
-            <span className="ml-auto font-mono text-xs tracking-widest text-teal-300/70">CASE STUDY {String(index + 1).padStart(2, "0")}</span>
+            <span className="ml-auto font-mono text-xs tracking-widest text-red-300/70">CASE STUDY {String(index + 1).padStart(2, "0")}</span>
           </div>
 
-          <div key={active.id} className="relative aspect-[16/9] overflow-hidden rounded-b-xl border border-white/[0.07] bg-[#0B111A]" style={{ animation: "projectSlide 700ms cubic-bezier(0.22,1,0.36,1)" }}>
+          <div key={active.id} className="relative aspect-[16/9] overflow-hidden rounded-b-xl border border-white/[0.07] bg-[#100B0D]" style={{ animation: "projectSlide 700ms cubic-bezier(0.22,1,0.36,1)" }}>
             <SmartImage src={active.image} alt={`${active.name} project mockup`} className="h-full w-full object-cover" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05070A]/45 via-transparent to-transparent" />
             {hasMultipleProjects && (
               <>
-                <button type="button" onClick={showPrevious} aria-label="View previous case study" className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#0A0E14]/75 text-white/80 backdrop-blur-sm transition-all hover:border-teal-300/60 hover:bg-[#0A0E14] hover:text-teal-300 sm:h-11 sm:w-11">
+                <button type="button" onClick={showPrevious} aria-label="View previous case study" className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#0A0E14]/75 text-white/80 backdrop-blur-sm transition-all hover:border-red-400/60 hover:bg-[#0A0E14] hover:text-red-300 sm:h-11 sm:w-11">
                   <ChevronLeft className="h-5 w-5" />
                 </button>
-                <button type="button" onClick={showNext} aria-label="View next case study" className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#0A0E14]/75 text-white/80 backdrop-blur-sm transition-all hover:border-teal-300/60 hover:bg-[#0A0E14] hover:text-teal-300 sm:h-11 sm:w-11">
+                <button type="button" onClick={showNext} aria-label="View next case study" className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#0A0E14]/75 text-white/80 backdrop-blur-sm transition-all hover:border-red-400/60 hover:bg-[#0A0E14] hover:text-red-300 sm:h-11 sm:w-11">
                   <ChevronRight className="h-5 w-5" />
                 </button>
               </>
@@ -729,7 +729,7 @@ function FeaturedWork({ onOpenModal }) {
         <div className="mt-7 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <div className="mb-3 flex flex-wrap items-center gap-3">
-              <span className="font-mono text-sm tracking-[0.18em] text-teal-300 uppercase">{active.industry}</span>
+              <span className="font-mono text-sm tracking-[0.18em] text-red-300 uppercase">{active.industry}</span>
               <span className="h-1 w-1 rounded-full bg-white/25" />
               <span className="font-mono text-sm text-white/35">{String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}</span>
             </div>
@@ -738,19 +738,19 @@ function FeaturedWork({ onOpenModal }) {
             <p className="mt-3 max-w-3xl font-mono text-sm leading-relaxed text-white/35"></p>
             <div className="mt-5 flex flex-wrap gap-2">
               {active.services.map((service) => (
-                <span key={service} className="rounded-full border border-teal-400/20 bg-teal-400/[0.07] px-3 py-1.5 font-mono text-sm tracking-wide text-teal-300/80">{service}</span>
+                <span key={service} className="rounded-full border border-red-500/20 bg-red-500/[0.07] px-3 py-1.5 font-mono text-sm tracking-wide text-red-300/80">{service}</span>
               ))}
             </div>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
             {active.url && active.url !== "#" ? (
-              <a href={active.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-teal-400 px-6 py-3 font-medium text-[#0A0E14] transition-colors hover:bg-teal-300">
+              <a href={active.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-red-500 px-6 py-3 font-medium text-[#090909] transition-colors hover:bg-red-400">
                 View Live Site <ExternalLink className="h-4 w-4" />
               </a>
             ) : (
-              <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/25 px-6 py-3 font-medium text-teal-300/80">Replace With Live URL <ExternalLink className="h-4 w-4" /></span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-500/25 px-6 py-3 font-medium text-red-300/80">Replace With Live URL <ExternalLink className="h-4 w-4" /></span>
             )}
-            <button type="button" onClick={() => onOpenModal(active)} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-medium text-white/80 transition-colors hover:border-teal-400/50">
+            <button type="button" onClick={() => onOpenModal(active)} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-medium text-white/80 transition-colors hover:border-red-500/50">
               View Details <ArrowUpRight className="h-4 w-4" />
             </button>
           </div>
@@ -761,7 +761,7 @@ function FeaturedWork({ onOpenModal }) {
             <div className="h-px flex-1 bg-white/[0.08]" />
             <div className="flex items-center gap-2" aria-label="Case study navigation">
               {PROJECTS.map((project, projectIndex) => (
-                <button key={project.id} type="button" onClick={() => setIndex(projectIndex)} aria-label={`View case study ${projectIndex + 1}`} className={`h-1.5 rounded-full transition-all duration-300 ${projectIndex === index ? "w-9 bg-teal-300" : "w-3 bg-white/20 hover:bg-white/40"}`} />
+                <button key={project.id} type="button" onClick={() => setIndex(projectIndex)} aria-label={`View case study ${projectIndex + 1}`} className={`h-1.5 rounded-full transition-all duration-300 ${projectIndex === index ? "w-9 bg-red-400" : "w-3 bg-white/20 hover:bg-white/40"}`} />
               ))}
             </div>
             <div className="h-px flex-1 bg-white/[0.08]" />
@@ -792,12 +792,12 @@ function ProjectModal({ project, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[88vh] overflow-y-auto rounded-2xl border border-teal-400/25 bg-[#0B111A] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.7)] animate-scaleIn"
+        className="relative w-full max-w-3xl max-h-[88vh] overflow-y-auto rounded-2xl border border-red-500/25 bg-[#100B0D] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.7)] animate-scaleIn"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center border border-white/15 bg-[#0A0E14]/80 text-white/70 hover:text-white hover:border-teal-400/50 transition-colors"
+          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center border border-white/15 bg-[#0A0E14]/80 text-white/70 hover:text-white hover:border-red-500/50 transition-colors"
           aria-label="Close"
         >
           <X className="w-4 h-4" />
@@ -806,14 +806,14 @@ function ProjectModal({ project, onClose }) {
           <SmartImage src={project.image} alt={project.name} className="w-full h-full object-cover" />
         </div>
         <div className="p-8">
-          <span className="font-mono text-base tracking-widest text-teal-300 uppercase">{project.industry}</span>
+          <span className="font-mono text-base tracking-widest text-red-300 uppercase">{project.industry}</span>
           <h3 className="font-[Space_Grotesk,sans-serif] text-3xl text-white font-medium mt-2 mb-4">
             {project.name}
           </h3>
           <p className="text-white/60 text-lg leading-relaxed mb-6">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-8">
             {project.services.map((s) => (
-              <span key={s} className="rounded-full font-mono text-base tracking-wide text-teal-300/80 bg-teal-400/[0.08] px-3 py-1.5">
+              <span key={s} className="rounded-full font-mono text-base tracking-wide text-red-300/80 bg-red-500/[0.08] px-3 py-1.5">
                 {s}
               </span>
             ))}
@@ -823,12 +823,12 @@ function ProjectModal({ project, onClose }) {
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-teal-400 text-[#0A0E14] font-medium px-6 py-3 hover:bg-teal-300 transition-colors duration-200"
+              className="inline-flex items-center gap-2 rounded-full bg-red-500 text-[#090909] font-medium px-6 py-3 hover:bg-red-400 transition-colors duration-200"
             >
               Visit Live Site <ExternalLink className="w-4 h-4" />
             </a>
           ) : (
-            <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/25 text-teal-300/80 font-medium px-6 py-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/25 text-red-300/80 font-medium px-6 py-3">
               Replace With Live URL <ExternalLink className="w-4 h-4" />
             </span>
           )}
@@ -841,7 +841,7 @@ function ProjectModal({ project, onClose }) {
 /* ---------- Service card ---------- */
 function ServiceCard({ service, delay }) {
   const Icon = service.icon;
-  const a = ACCENTS[service.color] || ACCENTS.teal;
+  const a = ACCENTS[service.color] || ACCENTS.red;
   return (
     <Reveal delay={delay} className="h-full">
       <div className="group relative h-full rounded-2xl border border-white/[0.08] bg-white/[0.015] p-8 overflow-hidden hover:border-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 hover:shadow-[0_20px_50px_-25px_rgba(0,0,0,0.6)]">
@@ -869,7 +869,7 @@ function SystemFlow() {
     <div ref={ref}>
       {/* Desktop: horizontal pipeline */}
       <div className="hidden lg:block relative pt-20 pb-2">
-        <div className="absolute left-0 right-0 top-20 h-1 rounded-full overflow-hidden bg-gradient-to-r from-teal-400/25 via-violet-400/25 to-emerald-400/25">
+        <div className="absolute left-0 right-0 top-20 h-1 rounded-full overflow-hidden bg-gradient-to-r from-red-500/25 via-red-400/25 to-red-700/25">
           {visible && (
             <>
               <span className="flow-h" style={{ animationDelay: "0s" }} />
@@ -881,7 +881,7 @@ function SystemFlow() {
         <div className="flex justify-between gap-4">
           {SYSTEM_NODES.map((node, i) => {
             const Icon = node.icon;
-            const a = ACCENTS[node.color] || ACCENTS.teal;
+            const a = ACCENTS[node.color] || ACCENTS.red;
             return (
               <Reveal key={node.label} delay={i * 130} className={`relative flex-1 flex flex-col items-center text-center ${i % 2 === 1 ? "mt-12" : "mt-0"}`}>
                 <div
@@ -901,13 +901,13 @@ function SystemFlow() {
 
       {/* Mobile / tablet: vertical pipeline */}
       <div className="lg:hidden relative pl-4">
-        <div className="absolute left-10 top-3 bottom-3 w-1 rounded-full overflow-hidden bg-gradient-to-b from-teal-400/25 via-violet-400/25 to-emerald-400/25">
+        <div className="absolute left-10 top-3 bottom-3 w-1 rounded-full overflow-hidden bg-gradient-to-b from-red-500/25 via-red-400/25 to-red-700/25">
           {visible && <span className="flow-v" />}
         </div>
         <div className="space-y-11">
           {SYSTEM_NODES.map((node, i) => {
             const Icon = node.icon;
-            const a = ACCENTS[node.color] || ACCENTS.teal;
+            const a = ACCENTS[node.color] || ACCENTS.red;
             return (
               <Reveal key={node.label} delay={i * 130} className="relative flex gap-6">
                 <div
@@ -960,7 +960,7 @@ function TestimonialCarousel() {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-5 h-5 ${i < t.rating ? "text-teal-400 fill-teal-400" : "text-white/15"}`}
+                    className={`w-5 h-5 ${i < t.rating ? "text-red-400 fill-red-400" : "text-white/15"}`}
                   />
                 ))}
               </div>
@@ -980,14 +980,14 @@ function TestimonialCarousel() {
         <>
           <button
             onClick={() => setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-            className="hidden sm:flex absolute left-0 top-1/2 -translate-x-16 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center border border-white/15 text-white/60 hover:text-teal-300 hover:border-teal-400/40 transition-colors"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-x-16 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center border border-white/15 text-white/60 hover:text-red-300 hover:border-red-500/40 transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => setIndex((i) => (i + 1) % TESTIMONIALS.length)}
-            className="hidden sm:flex absolute right-0 top-1/2 translate-x-16 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center border border-white/15 text-white/60 hover:text-teal-300 hover:border-teal-400/40 transition-colors"
+            className="hidden sm:flex absolute right-0 top-1/2 translate-x-16 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center border border-white/15 text-white/60 hover:text-red-300 hover:border-red-500/40 transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" />
@@ -998,7 +998,7 @@ function TestimonialCarousel() {
                 key={i}
                 onClick={() => setIndex(i)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === index ? "w-8 bg-teal-400" : "w-1.5 bg-white/20 hover:bg-white/40"
+                  i === index ? "w-8 bg-red-500" : "w-1.5 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
@@ -1036,7 +1036,7 @@ export default function PortfolioSite() {
   }, []);
 
   return (
-    <div className="bg-[#0A0E14] text-[#F2F4F7] min-h-screen font-[Inter,sans-serif] antialiased selection:bg-teal-500/30 selection:text-white">
+    <div className="bg-[#0A0E14] text-[#F2F4F7] min-h-screen font-[Inter,sans-serif] antialiased selection:bg-red-500/30 selection:text-white">
       <style>{`
         html { scroll-behavior: smooth; }
         @keyframes pulseRight {
@@ -1115,7 +1115,7 @@ export default function PortfolioSite() {
         .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
         .animate-scaleIn { animation: scaleIn 0.25s ease-out; }
         .grad-text {
-          background: linear-gradient(90deg, #2CD9C5, #6FE8DB, #2CD9C5);
+          background: linear-gradient(90deg, #EF4444, #FCA5A5, #EF4444);
           background-size: 200% auto;
           -webkit-background-clip: text;
           background-clip: text;
@@ -1158,8 +1158,8 @@ export default function PortfolioSite() {
                 {link.label}
               </a>
             ))}
-            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="font-mono text-lg tracking-wide rounded-full px-5 py-2.5 bg-teal-400 text-[#0A0E14] font-medium hover:bg-teal-300 hover:-translate-y-0.5 transition-all duration-200">
-              Let&apos;s Talk
+            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="font-mono text-lg tracking-wide rounded-full px-5 py-2.5 bg-red-500 text-[#090909] font-medium hover:bg-red-400 hover:-translate-y-0.5 transition-all duration-200">
+              Book a Strategy Call
             </a>
           </nav>
 
@@ -1175,8 +1175,8 @@ export default function PortfolioSite() {
                 {link.label}
               </a>
             ))}
-            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" onClick={closeMenu} className="font-mono text-xl text-teal-300 py-3.5">
-              Let&apos;s Talk →
+            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" onClick={closeMenu} className="font-mono text-xl text-red-300 py-3.5">
+              Book a Strategy Call →
             </a>
           </div>
         )}
@@ -1186,32 +1186,32 @@ export default function PortfolioSite() {
       <section id="top" className="relative pt-40 pb-20 md:pt-52 md:pb-24 px-6 md:px-8 overflow-hidden dot-grid">
         <div
           className="pointer-events-none absolute -top-40 right-[-10%] w-[620px] h-[620px] rounded-full opacity-[0.12] blur-3xl"
-          style={{ background: "radial-gradient(circle, #2CB1A3 0%, transparent 70%)", animation: "float 11s ease-in-out infinite" }}
+          style={{ background: "radial-gradient(circle, #991B1B 0%, transparent 70%)", animation: "float 11s ease-in-out infinite" }}
         />
         <div
           className="pointer-events-none absolute top-[20%] left-[-15%] w-[420px] h-[420px] rounded-full opacity-[0.08] blur-3xl"
-          style={{ background: "radial-gradient(circle, #3B82F6 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #450A0A 0%, transparent 70%)" }}
         />
 
         <div className="max-w-6xl mx-auto relative grid lg:grid-cols-[1.1fr_0.95fr] gap-16 items-center">
           <div>
             <Reveal>
-              <div className="inline-flex items-center gap-2 font-mono text-lg tracking-[0.12em] text-teal-300/90 rounded-full border border-teal-400/25 bg-teal-400/5 px-4 py-2 mb-8">
-                <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+              <div className="inline-flex items-center gap-2 font-mono text-lg tracking-[0.12em] text-red-300/90 rounded-full border border-red-500/25 bg-red-500/5 px-4 py-2 mb-8">
+                <Sparkles className="w-3.5 h-3.5 text-red-400" />
                 5+ YEARS OF GOHIGHLEVEL EXPERIENCE
               </div>
             </Reveal>
 
             <Reveal delay={80}>
               <h1 className="font-[Space_Grotesk,sans-serif] text-[2.6rem] leading-[1.06] sm:text-5xl md:text-6xl font-medium tracking-tight text-white">
-                Websites and Automated Systems
-                <span className="block grad-text">That Turn Leads Into Customers</span>
+                Websites and Revenue Systems
+                <span className="block grad-text">That Turn Interest Into Customers</span>
               </h1>
             </Reveal>
 
             <Reveal delay={160}>
               <p className="mt-8 text-xl md:text-2xl text-white/60 max-w-xl leading-relaxed">
-                I design GoHighLevel websites, funnels, CRM systems, and automations for service businesses — so more enquiries are captured, followed up, and moved toward a booked appointment.
+                I design the website, CRM, and follow-up system behind your growth — so enquiries are captured, responded to, and moved toward a booked appointment.
               </p>
             </Reveal>
 
@@ -1219,17 +1219,17 @@ export default function PortfolioSite() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="#work"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-teal-400 text-[#0A0E14] text-2xl font-medium px-8 py-4 hover:bg-teal-300 hover:-translate-y-0.5 transition-all duration-200 shadow-[0_8px_30px_-8px_rgba(45,217,197,0.5)]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-red-500 text-[#090909] text-2xl font-medium px-8 py-4 hover:bg-red-400 hover:-translate-y-0.5 transition-all duration-200 shadow-[0_8px_30px_-8px_rgba(239,68,68,0.5)]"
                 >
-                  View My Work <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  See the Work <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 text-white/85 text-2xl font-medium px-8 py-4 hover:border-teal-400/50 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 text-white/85 text-2xl font-medium px-8 py-4 hover:border-red-500/50 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  Let&apos;s Talk
+                  Book a Strategy Call
                 </a>
               </div>
               <p className="mt-4 text-base text-white/40 font-mono">Prefer a quick answer? Tell me where leads are getting stuck and I&apos;ll reply within 5 minutes.</p>
@@ -1255,8 +1255,8 @@ export default function PortfolioSite() {
             <div className="relative aspect-[4/5] rounded-2xl border border-white/[0.08] overflow-hidden">
               <SmartImage src={PORTRAIT_IMAGE} alt="Ayomide Ariyo" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E14]/60 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-teal-400/25 bg-[#0B121B]/90 backdrop-blur-sm px-4 py-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-red-500/25 bg-[#140B0D]/90 backdrop-blur-sm px-4 py-3 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                 <span className="font-mono text-base text-white/70">Available for new projects</span>
               </div>
             </div>
@@ -1271,18 +1271,18 @@ export default function PortfolioSite() {
               <p className="text-white/60 text-3xl leading-relaxed max-w-xl">
                 I build complete digital systems — connecting the website to lead capture, the CRM, follow-up, appointment booking, and the sales handoff.
               </p>
-              <div className="flex flex-wrap items-center gap-2 mt-6 font-mono text-lg text-teal-300/90">
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">Website</span>
-                <ArrowRight className="w-4 h-4 text-teal-400/40" />
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">Lead Capture</span>
-                <ArrowRight className="w-4 h-4 text-teal-400/40" />
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">CRM</span>
-                <ArrowRight className="w-4 h-4 text-teal-400/40" />
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">Follow-Up</span>
-                <ArrowRight className="w-4 h-4 text-teal-400/40" />
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">Appointment</span>
-                <ArrowRight className="w-4 h-4 text-teal-400/40" />
-                <span className="rounded-full border border-teal-400/25 bg-teal-400/[0.06] px-3 py-1.5">Sales</span>
+              <div className="flex flex-wrap items-center gap-2 mt-6 font-mono text-lg text-red-300/90">
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">Website</span>
+                <ArrowRight className="w-4 h-4 text-red-400/40" />
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">Lead Capture</span>
+                <ArrowRight className="w-4 h-4 text-red-400/40" />
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">CRM</span>
+                <ArrowRight className="w-4 h-4 text-red-400/40" />
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">Follow-Up</span>
+                <ArrowRight className="w-4 h-4 text-red-400/40" />
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">Appointment</span>
+                <ArrowRight className="w-4 h-4 text-red-400/40" />
+                <span className="rounded-full border border-red-500/25 bg-red-500/[0.06] px-3 py-1.5">Sales</span>
               </div>
             </Reveal>
 
@@ -1296,13 +1296,13 @@ export default function PortfolioSite() {
       </section>
 
       {/* ================= FEATURED WORK ================= */}
-      <section id="work" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#0B111A]">
+      <section id="work" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#100B0D]">
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <Eyebrow index="02">Selected Work</Eyebrow>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
               <h2 className="font-[Space_Grotesk,sans-serif] text-3xl md:text-4xl font-medium text-white">Selected Work</h2>
-              <p className="text-white/65 text-2xl max-w-sm">A few of the websites and systems I&apos;ve built recently. Replace the placeholders with real screenshots, outcomes, and live links before launch.</p>
+              <p className="text-white/65 text-2xl max-w-sm">A selection of conversion-focused websites, funnels, and lead systems built to help service businesses turn attention into booked conversations.</p>
             </div>
           </Reveal>
 
@@ -1328,7 +1328,7 @@ export default function PortfolioSite() {
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section id="services" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#0B111A]">
+      <section id="services" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#100B0D]">
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <Eyebrow index="04">What I Do</Eyebrow>
@@ -1357,10 +1357,10 @@ export default function PortfolioSite() {
               {TECH_STACK.map((tech, i) => (
                 <span
                   key={tech}
-                  className="flex items-center gap-2 font-mono text-lg text-white/70 rounded-full border border-white/[0.1] hover:border-teal-400/50 hover:text-teal-300 hover:bg-teal-400/[0.06] transition-all duration-300 px-5 py-3 cursor-default"
+                  className="flex items-center gap-2 font-mono text-lg text-white/70 rounded-full border border-white/[0.1] hover:border-red-500/50 hover:text-red-300 hover:bg-red-500/[0.06] transition-all duration-300 px-5 py-3 cursor-default"
                   style={{ animation: `float ${5 + (i % 4)}s ease-in-out infinite`, animationDelay: `${i * 0.2}s` }}
                 >
-                  <Code2 className="w-3.5 h-3.5 text-teal-400/70" />
+                  <Code2 className="w-3.5 h-3.5 text-red-400/70" />
                   {tech}
                 </span>
               ))}
@@ -1370,7 +1370,7 @@ export default function PortfolioSite() {
       </section>
 
       {/* ================= STATS ================= */}
-      <section id="experience" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#0B111A]">
+      <section id="experience" className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#100B0D]">
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <Eyebrow index="06">Experience</Eyebrow>
@@ -1386,8 +1386,8 @@ export default function PortfolioSite() {
           <Reveal delay={150}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {["Websites & Funnels", "CRM Systems", "Workflow Automation", "Lead Management", "Integrations", "AI Automation"].map((tag) => (
-                <div key={tag} className="rounded-xl border border-white/[0.08] bg-[#0B111A] px-7 py-6 flex items-center gap-3 hover:border-white/[0.16] hover:bg-[#0F1B24] transition-colors duration-300">
-                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                <div key={tag} className="rounded-xl border border-white/[0.08] bg-[#100B0D] px-7 py-6 flex items-center gap-3 hover:border-white/[0.16] hover:bg-[#1A0E12] transition-colors duration-300">
+                  <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
                   <span className="text-white/75 text-xl">{tag}</span>
                 </div>
               ))}
@@ -1418,7 +1418,7 @@ export default function PortfolioSite() {
       )}
 
       {/* ================= HOW I WORK ================= */}
-      <section className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#0B111A]">
+      <section className="px-6 md:px-8 py-24 md:py-32 border-b border-white/[0.06] bg-[#100B0D]">
         <div className="max-w-4xl mx-auto">
           <Reveal>
             <Eyebrow index="08">How I Work</Eyebrow>
@@ -1426,12 +1426,12 @@ export default function PortfolioSite() {
           </Reveal>
 
           <div className="relative">
-            <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-teal-400/50 via-white/10 to-transparent hidden sm:block" />
+            <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-red-500/50 via-white/10 to-transparent hidden sm:block" />
             <div className="space-y-10">
               {PROCESS_STEPS.map((step, i) => (
                 <Reveal key={step.num} delay={i * 100}>
                   <div className="flex gap-6 sm:gap-8">
-                    <div className="relative shrink-0 w-12 h-12 rounded-full border border-teal-400/30 bg-[#0B111A] flex items-center justify-center font-mono text-lg text-teal-300 z-10">
+                    <div className="relative shrink-0 w-12 h-12 rounded-full border border-red-500/30 bg-[#100B0D] flex items-center justify-center font-mono text-lg text-red-300 z-10">
                       {step.num}
                     </div>
                     <div className="pt-1.5">
@@ -1455,12 +1455,12 @@ export default function PortfolioSite() {
         <div
           className="pointer-events-none absolute inset-0 opacity-30 transition-[background] duration-300"
           style={{
-            background: `radial-gradient(500px circle at ${ctaGlow.x}% ${ctaGlow.y}%, rgba(45,217,197,0.25), transparent 60%)`,
+            background: `radial-gradient(500px circle at ${ctaGlow.x}% ${ctaGlow.y}%, rgba(239,68,68,0.25), transparent 60%)`,
           }}
         />
         <div
           className="pointer-events-none absolute bottom-[-30%] left-[-10%] w-[560px] h-[560px] rounded-full opacity-[0.14] blur-3xl"
-          style={{ background: "radial-gradient(circle, #2CB1A3 0%, transparent 70%)", animation: "float 10s ease-in-out infinite" }}
+          style={{ background: "radial-gradient(circle, #991B1B 0%, transparent 70%)", animation: "float 10s ease-in-out infinite" }}
         />
 
         <FloatingBadge icon={Zap} label="Automation Active" className="hidden lg:flex top-10 left-[8%] opacity-60" delay="0.5s" duration="8s" />
@@ -1469,19 +1469,19 @@ export default function PortfolioSite() {
         <div className="max-w-3xl mx-auto text-center relative">
           <Reveal>
             <h2 className="font-[Space_Grotesk,sans-serif] text-4xl md:text-6xl leading-[1.1] font-medium text-white">
-              Ready for a Website or CRM
+              Ready for a Growth System
               <br />
-              System That Works?
+              That Actually Works?
             </h2>
             <p className="mt-7 text-white/60 text-3xl">
-              Tell me what you want to improve. I&apos;ll help map the right website, CRM, and automation path for your business.
+              Tell me where leads are getting stuck. I&apos;ll help map the clearest website, CRM, and automation path to fix it.
             </p>
             <div className="mt-10 flex flex-wrap flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-teal-400 text-[#0A0E14] text-2xl font-medium px-9 py-4.5 hover:bg-teal-300 hover:-translate-y-0.5 transition-all duration-200 shadow-[0_8px_30px_-8px_rgba(45,217,197,0.5)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-red-500 text-[#090909] text-2xl font-medium px-9 py-4.5 hover:bg-red-400 hover:-translate-y-0.5 transition-all duration-200 shadow-[0_8px_30px_-8px_rgba(239,68,68,0.5)]"
               >
                 Book a Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -1489,7 +1489,7 @@ export default function PortfolioSite() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 text-white/85 text-2xl font-medium px-9 py-4.5 hover:border-teal-400/50 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 text-white/85 text-2xl font-medium px-9 py-4.5 hover:border-red-500/50 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-200"
               >
                 <MessageCircle className="w-5 h-5" /> WhatsApp
               </a>
@@ -1514,7 +1514,7 @@ export default function PortfolioSite() {
             <span className="font-mono text-base tracking-widest text-white/35 uppercase">Quick Links</span>
             <div className="mt-4 flex flex-col gap-2.5">
               {FOOTER_LINKS.map((link) => (
-                <a key={link.href} href={link.href} className="text-white/65 hover:text-teal-300 transition-colors text-xl w-fit">
+                <a key={link.href} href={link.href} className="text-white/65 hover:text-red-300 transition-colors text-xl w-fit">
                   {link.label}
                 </a>
               ))}
@@ -1524,16 +1524,16 @@ export default function PortfolioSite() {
           <div>
             <span className="font-mono text-base tracking-widest text-white/35 uppercase">Connect</span>
             <div className="mt-4 flex flex-col gap-2.5">
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-teal-300 transition-colors w-fit">
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-red-300 transition-colors w-fit">
                 <MessageCircle className="w-4 h-4" /> WhatsApp
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2 text-xl text-white/65 hover:text-teal-300 transition-colors w-fit">
+              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2 text-xl text-white/65 hover:text-red-300 transition-colors w-fit">
                 <Mail className="w-4 h-4" /> Email
               </a>
-              <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-teal-300 transition-colors w-fit">
+              <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-red-300 transition-colors w-fit">
                 <LinkIcon className="w-4 h-4" /> LinkedIn
               </a>
-              <a href={CONTACT.upwork} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-teal-300 transition-colors w-fit">
+              <a href={CONTACT.upwork} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xl text-white/65 hover:text-red-300 transition-colors w-fit">
                 <Briefcase className="w-4 h-4" /> Upwork
               </a>
             </div>
