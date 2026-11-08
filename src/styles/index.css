@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #101B2D;
+    color: #F5F7FA;
+    overflow-x: hidden;
+  }
+}
+
+/* Crisp technical dot grid pattern */
+.tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(36, 59, 96, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 59, 96, 0.25) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.tech-dots {
+  background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Circuit line styling */
+.circuit-border {
+  border: 1px solid rgba(36, 59, 96, 0.8);
+}
+
+.circuit-border-active {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.2);
+}
+
+.circuit-border-teal {
+  border-color: rgba(33, 199, 183, 0.6);
+  box-shadow: 0 0 15px -3px rgba(33, 199, 183, 0.2);
+}
+
+/* Glassmorphism that looks like calibrated dark glass, not plastic blur */
+.glass-panel {
+  background: rgba(16, 27, 45, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(36, 59, 96, 0.65);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(23, 39, 64, 0.5) 0%, rgba(16, 27, 45, 0.7) 100%);
+  border: 1px solid rgba(36, 59, 96, 0.6);
+}
+
+/* Subtle data stream animation along circuit paths */
+@keyframes dataFlow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -24; }
+}
+
+.dash-flow {
+  animation: dashFlow 1.6s linear infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+@keyframes nodePing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-node-ping {
+  animation: nodePing 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes stageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-stage-in {
+  animation: stageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 35s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dash-flow,
+  .animate-pulse-subtle,
+  .animate-node-ping,
+  .animate-stage-in,
+  .animate-ticker {
+    animation: none !important;
+  }
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
