@@ -132,3 +132,12 @@
   outline: 2px solid #3B82F6;
   outline-offset: 2px;
 }
+
+/* Prevent visible download controls in video elements */
+video::-internal-media-controls-download-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}

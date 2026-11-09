@@ -45,13 +45,19 @@ export default function VideoModal({ isOpen, onClose, videoSrc, poster, title })
         </div>
 
         {/* Video Player */}
-        <div className="relative aspect-video bg-black">
+        <div
+          className="relative aspect-video bg-black select-none"
+          onContextMenu={(e) => e.preventDefault()}
+        >
           <video
             src={videoSrc}
             poster={poster}
             controls
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
             autoPlay
             playsInline
+            draggable={false}
             className="w-full h-full object-contain"
           >
             Your browser does not support the video tag.
