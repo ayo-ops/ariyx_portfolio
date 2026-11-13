@@ -1,0 +1,73 @@
+{
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  "request_timeout_seconds": 12,
+  "rate_limit_delay_seconds": 1.5,
+  "max_retries": 2,
+  "batch_defaults": {
+    "target_count": 30,
+    "industries": [
+      "Marketing agencies",
+      "Consulting firms"
+    ],
+    "countries": [
+      "US",
+      "UK",
+      "CA",
+      "AU"
+    ]
+  },
+  "daily_pipeline": {
+    "target_accepted_per_day": 30,
+    "campaign_days": 0,
+    "campaign_mode": "ongoing_indefinite",
+    "approved_markets": [
+      "US",
+      "UK",
+      "GB",
+      "CA",
+      "AU"
+    ],
+    "max_candidates_per_day": 240,
+    "max_runtime_minutes": 45,
+    "smtp_timeout_seconds": 3.5,
+    "retry_rejected_after_days": 14,
+    "retry_needs_research_after_days": 3,
+    "require_verified_email": false,
+    "allow_publicly_listed_unverified_email": true,
+    "exclude_enterprise_from_outreach_sheet": true,
+    "defer_email_api_unless_prequalified": true,
+    "max_email_checks_per_candidate": 2,
+    "budget_mode": "zero_cost_free_only",
+    "free_https_waterfall": [
+      "quickemailverification",
+      "verifalia",
+      "reoon",
+      "zerobounce"
+    ],
+    "daily_free_quotas_reference": {
+      "quickemailverification_per_day": 100,
+      "verifalia_per_day": 25,
+      "reoon_per_day": 20,
+      "zerobounce_per_month": 100
+    }
+  },
+  "free_discovery_providers": {
+    "duckduckgo_html": {
+      "enabled": true,
+      "max_results_per_query": 20
+    },
+    "wikidata_sparql": {
+      "enabled": true,
+      "max_results_per_query": 40
+    },
+    "uk_companies_house": {
+      "enabled": true,
+      "api_base": "https://api.company-information.service.gov.uk",
+      "api_key": ""
+    },
+    "seed_loader": {
+      "enabled": false,
+      "default_seed_file": "data/seed_companies.csv"
+    }
+  }
+}

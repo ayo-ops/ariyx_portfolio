@@ -1,0 +1,91 @@
+{
+  "compliance_statuses": {
+    "REVIEW_REQUIRED": "Jurisdiction allows commercial contact under specific conditions (e.g. US CAN-SPAM or UK PECR corporate subscriber legitimate interest), but message relevance, corporate entity type, and opt-out mechanics must be human-verified before outreach.",
+    "RESTRICTED": "High-risk jurisdiction (e.g. Germany UWG §7, Austria, Italy) requiring prior explicit opt-in consent for commercial email, or consumer/personal email address detected. Outreach strictly prohibited without proof of prior consent.",
+    "ELIGIBILITY_NOT_ESTABLISHED": "Insufficient evidence to determine legal registration jurisdiction, corporate subscriber status, or professional relevance. Must establish legal eligibility before proceeding.",
+    "OPT_OUT_RECORDED": "Domain, email address, or individual is listed on the suppression list or has previously requested exclusion. Do not contact under any circumstances."
+  },
+  "country_profiles": {
+    "US": {
+      "framework": "CAN-SPAM Act (15 U.S.C. 7701)",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "Human review required before outreach",
+        "Clear and conspicuous identification of commercial nature",
+        "Valid physical postal address in email footer",
+        "Functional, honored opt-out / unsubscribe mechanism within 10 days",
+        "No deceptive subject lines or spoofed headers"
+      ]
+    },
+    "UK": {
+      "framework": "PECR (Reg 22/23) & UK GDPR (Article 6(1)(f))",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "Verify corporate subscriber status (limited company, LLP, Scottish partnership); sole traders and traditional partnerships have consumer protections",
+        "Establish Legitimate Interest: service must be directly relevant to the recipient's commercial function",
+        "Easy, immediate opt-out mechanism mandatory in every communication",
+        "Public listing does not constitute blanket marketing consent"
+      ]
+    },
+    "CA": {
+      "framework": "CASL (Canada's Anti-Spam Legislation - S.C. 2010, c. 23)",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "Conspicuous publication exemption applies ONLY if publication was without 'no unsolicited messages' statement",
+        "Message must be strictly and directly relevant to recipient's business/professional role",
+        "Must verify sender identification, postal address, and functional 60-day unsubscribe link",
+        "Cautious approach required: CASL carries statutory damages"
+      ]
+    },
+    "AU": {
+      "framework": "Spam Act 2003 (Cth) & Privacy Act 1988",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "Inferred consent via conspicuous publication requires message to be directly related to the person's employment or business role",
+        "Recipient must not have stated they do not want commercial electronic messages",
+        "Functional unsubscribe mechanism and accurate sender identification mandatory"
+      ]
+    },
+    "DE": {
+      "framework": "German Act Against Unfair Competition (UWG §7 Abs. 2 Nr. 2)",
+      "default_status": "RESTRICTED",
+      "requirements": [
+        "Strict prohibition of cold commercial email without prior express opt-in consent (even for B2B)",
+        "No legitimate interest loophole for unsolicited cold email",
+        "Manual review required: outreach restricted unless prior business relationship exists"
+      ]
+    },
+    "AT": {
+      "framework": "Austrian Telecommunications Act (TKG 2021 § 174)",
+      "default_status": "RESTRICTED",
+      "requirements": [
+        "Prior consent mandatory for electronic commercial communications to businesses and consumers alike",
+        "Manual review required: restricted"
+      ]
+    },
+    "FR": {
+      "framework": "French Postal and Electronic Communications Code (CPCE L.34-5) & CNIL guidelines",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "B2B cold email permitted without prior consent IF directly related to recipient's profession",
+        "Recipient must be informed of processing and given right to object / opt out easily at collection and in each email"
+      ]
+    },
+    "NL": {
+      "framework": "Dutch Telecommunications Act (Telecommunicatiewet Art 11.7)",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "B2B commercial messages permitted to corporate entities and business email addresses",
+        "Must state identity clearly and provide direct opt-out"
+      ]
+    },
+    "OTHER_EU": {
+      "framework": "EU GDPR & National ePrivacy Implementations",
+      "default_status": "REVIEW_REQUIRED",
+      "requirements": [
+        "Varies by member state; default to REVIEW_REQUIRED",
+        "Verify professional relevance and corporate subscriber status before any contact"
+      ]
+    }
+  }
+}
