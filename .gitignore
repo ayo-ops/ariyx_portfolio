@@ -35,15 +35,6 @@ credentials/
 .env.*
 !.env.example
 
-# Lead Intelligence Local State & Private Prospect Data (Zero Data in Git)
-lead-intelligence/.venv/
-lead-intelligence/data/state/*.db
-lead-intelligence/data/state/*.db-*
-lead-intelligence/data/logs/*
-!lead-intelligence/data/logs/.gitkeep
-lead-intelligence/data/exports/*
-!lead-intelligence/data/exports/.gitkeep
-lead-intelligence/credentials/
-lead-intelligence/.env
-lead-intelligence/.env.*
+# Dedicated Standalone Project (Managed in ariyx-lead-intelligence repo)
+lead-intelligence/
 
