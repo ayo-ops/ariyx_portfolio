@@ -7,6 +7,7 @@ import SolutionsPage from "./pages/SolutionsPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import InsightsPage from "./pages/InsightsPage";
 import ContactPage from "./pages/ContactPage";
+import LandingPage from "./pages/LandingPage";
 
 function PageRouter() {
   const { path } = useRouter();
@@ -21,17 +22,17 @@ function PageRouter() {
   // Dynamically update document title based on route for SEO and browser tabs
   useEffect(() => {
     const titles = {
-      "/": "Ariyx Systems | CRM, Automation & AI Systems Consultancy",
-      "/about": "About | Ariyx Systems — CRM & Automation Consultancy",
-      "/services": "Services & Capabilities | Ariyx Systems",
-      "/solutions": "Solutions & Problem Architectures | Ariyx Systems",
-      "/portfolio": "Portfolio & Production Systems | Ariyx Systems",
-      "/insights": "Systems Blueprints & Insights | Ariyx Systems",
-      "/contact": "Contact & Project Scoping | Ariyx Systems",
+      "/": "Ariyx Systems",
+      "/about": "About | Ariyx Systems",
+      "/services": "Services | Ariyx Systems",
+      "/solutions": "Solutions | Ariyx Systems",
+      "/portfolio": "Portfolio | Ariyx Systems",
+      "/insights": "Insights | Ariyx Systems",
+      "/contact": "Contact | Ariyx Systems",
+      "/growth": "Ariyx Systems",
+      "/scale": "Ariyx Systems",
     };
-    document.title =
-      titles[normalizedPath] ||
-      "Ariyx Systems | CRM, Automation & AI Systems Consultancy";
+    document.title = titles[normalizedPath] || "Ariyx Systems";
   }, [normalizedPath]);
 
   switch (normalizedPath) {
@@ -49,6 +50,9 @@ function PageRouter() {
       return <InsightsPage />;
     case "/contact":
       return <ContactPage />;
+    case "/growth":
+    case "/scale":
+      return <LandingPage />;
     default:
       return <HomePage />;
   }

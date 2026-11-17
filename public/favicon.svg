@@ -1,22 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" rx="12" fill="#101B2D"/>
-  <rect x="1" y="1" width="46" height="46" rx="11" stroke="#243B60" stroke-width="1.5"/>
-  
-  <!-- Abstract Circuit 'A' Structure -->
-  <path d="M24 10L36 34H30L27.5 28.5H20.5L18 34H12L24 10Z" fill="url(#a_gradient)"/>
-  <path d="M24 17L21.8 23.5H26.2L24 17Z" fill="#101B2D"/>
-  
-  <!-- Subtle Circuit Connectors & Nodes -->
-  <circle cx="24" cy="10" r="2.5" fill="#21C7B7"/>
-  <circle cx="12" cy="34" r="2" fill="#3B82F6"/>
-  <circle cx="36" cy="34" r="2" fill="#3B82F6"/>
-  <line x1="20.5" y1="28.5" x2="27.5" y2="28.5" stroke="#21C7B7" stroke-width="2"/>
-  <circle cx="24" cy="28.5" r="1.5" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Circuit definition trace -->
+  <path
+    d="M6 30L18 6L30 30"
+    stroke="#243B60"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.35"
+  />
+  <!-- Active circuit path -->
+  <path
+    d="M6 30L18 6L30 30"
+    stroke="url(#circuitGrad)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Crossbar with circuit line -->
+  <line
+    x1="11"
+    y1="22"
+    x2="25"
+    y2="22"
+    stroke="#21C7B7"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+  <!-- Central circuit micro-node -->
+  <circle cx="18" cy="22" r="2.2" fill="#FFFFFF" />
+  <!-- Apex node -->
+  <circle cx="18" cy="6" r="2.6" fill="#21C7B7" />
+  <!-- Base termination nodes -->
+  <circle cx="6" cy="30" r="2.2" fill="#3B82F6" />
+  <circle cx="30" cy="30" r="2.2" fill="#3B82F6" />
 
   <defs>
-    <linearGradient id="a_gradient" x1="12" y1="10" x2="36" y2="34" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3B82F6"/>
-      <stop offset="1" stop-color="#21C7B7"/>
+    <linearGradient id="circuitGrad" x1="6" y1="6" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#21C7B7" />
     </linearGradient>
   </defs>
 </svg>

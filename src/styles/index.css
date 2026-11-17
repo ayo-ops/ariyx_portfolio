@@ -116,13 +116,30 @@
   animation-play-state: paused;
 }
 
+/* Kinetic moving letter headline animation */
+@keyframes letterFloatWave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.animate-letter-wave {
+  display: inline-block;
+  animation: letterFloatWave 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .dash-flow,
   .animate-pulse-subtle,
   .animate-node-ping,
   .animate-stage-in,
-  .animate-ticker {
+  .animate-ticker,
+  .animate-letter-wave {
     animation: none !important;
   }
 }

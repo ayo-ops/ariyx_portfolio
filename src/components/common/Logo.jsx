@@ -17,11 +17,11 @@ export default function Logo({ className = "", showWordmark = true, size = "md" 
     <div className={`flex items-center gap-3 select-none ${className}`}>
       {/* Official Ariyx Systems Logo — exact asset from favicon */}
       <img
-        src="/favicon.svg"
+        src="/favicon.svg?v=3"
         alt="Ariyx Systems Logo"
         width="48"
         height="48"
-        className={`${iconSizes[size] || iconSizes.md} shrink-0 object-contain rounded-xl shadow-sm`}
+        className={`${iconSizes[size] || iconSizes.md} shrink-0 object-contain`}
       />
 
       {/* Clean ARIYX SYSTEMS Wordmark */}
