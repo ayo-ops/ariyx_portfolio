@@ -122,7 +122,18 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-9px);
+    transform: translateY(-5px);
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes letterFloatWave {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
 }
 
