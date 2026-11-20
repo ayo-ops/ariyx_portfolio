@@ -415,59 +415,124 @@ export default function LandingPage() {
         </p>
       </section>
 
-      {/* ==================== SECTION 2: END TO END IMPLEMENTATION (MIDNIGHT NAVY) ==================== */}
-      <section className="bg-[#101B2D] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-white overflow-hidden">
-        <span className="inline-block rounded-full border border-blue-400/60 bg-blue-500/10 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-white uppercase">
+      {/* ==================== SECTION 2: FOUNDER SPOTLIGHT (MIDNIGHT NAVY) ==================== */}
+      <section className="bg-[#101B2D] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-white overflow-hidden border-t border-slate-200/10">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-14 md:grid-cols-2">
+          {/* Founder Image */}
+          <div className="max-w-sm sm:max-w-md mx-auto w-full">
+            <img
+              src="/founder.jpg"
+              alt="Ariyo Emmanuel, Founder of Ariyx Systems"
+              width={784}
+              height={864}
+              loading="lazy"
+              className="w-full rounded-2xl sm:rounded-3xl shadow-2xl object-cover aspect-[4/5]"
+            />
+          </div>
+
+          {/* Bio */}
+          <div>
+            <span className="inline-block rounded-full border border-blue-400/60 bg-blue-500/10 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-white uppercase">
+              DIRECT ENGINEERING ACCESS
+            </span>
+
+            <h2 className="mt-4 sm:mt-6 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white">
+              Hi, I'm <span className="bg-gradient-to-r from-blue-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Emmanuel.</span>
+            </h2>
+
+            <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-normal opacity-95">
+              <p>I'm the founder and lead systems architect at Ariyx Systems.</p>
+              <p>
+                I help businesses turn their enquiries, ad spend, and manual processes into automated revenue engines—through custom GoHighLevel setups, sub-minute lead response, multi-channel nurture, and AI voice agents.
+              </p>
+              <p>Here is the reality most business owners discover too late:</p>
+              <p className="text-lg sm:text-xl md:text-2xl font-black text-white italic border-l-4 border-teal-400 pl-4 py-1">
+                &ldquo;Most businesses don't have a lead problem. They have a plumbing problem.&rdquo;
+              </p>
+              <p>
+                Enquiries pour in from your website and ads, but disappear through delayed replies, disorganised inboxes, and forgotten follow-ups.
+              </p>
+              <p>
+                When you hire a bloated agency, you get sold by an account director and handed off to a junior intern who barely understands your sales workflow.
+              </p>
+              <p>
+                When you partner with Ariyx, you work directly with me. Every pipeline, webhook, database field, and automated sequence is engineered, tested, and launched personally.
+              </p>
+            </div>
+
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
+              <a
+                href={CONTACT.calendlyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto text-center rounded-2xl bg-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-extrabold text-white hover:brightness-110 transition shadow-lg shadow-blue-600/30"
+              >
+                Book a Strategy Call →
+              </a>
+              <Link
+                to="/about"
+                className="text-sm sm:text-base text-slate-300 hover:text-white underline underline-offset-4 transition text-center"
+              >
+                Read our full credentials &amp; background
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== SECTION 3: END TO END IMPLEMENTATION (CRISP WHITE) ==================== */}
+      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
+        <span className="inline-block rounded-full border border-blue-600/30 bg-blue-50 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-blue-600 uppercase">
           FULL-STACK AUTOMATION DELIVERY
         </span>
 
-        <h2 className="mt-6 sm:mt-8 text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black uppercase leading-tight text-white">
+        <h2 className="mt-6 sm:mt-8 text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black uppercase leading-tight text-slate-950">
           We engineer the entire pipeline for you. <br />
-          <span className="bg-gradient-to-r from-blue-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">
+          <span className="text-blue-600">
             From first click to closed deal.
           </span>
         </h2>
 
-        {/* 6 Cards Grid — Using Deep Navy #16253D */}
+        {/* 6 Cards Grid */}
         <div className="mx-auto mt-10 sm:mt-16 grid max-w-6xl gap-4 sm:gap-6 text-left sm:grid-cols-2 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">Custom CRM Architecture</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">Custom CRM Architecture</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               Clean GoHighLevel setups with customized pipelines, logical deal stages, and zero clutter so your team always knows who to follow up with.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">60-Second Speed-To-Lead</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">60-Second Speed-To-Lead</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               Instant automated SMS, email, and WhatsApp responses within 60 seconds of any enquiry landing—engaging buyers while they're hot.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">Automated Follow-Up Cadence</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">Automated Follow-Up Cadence</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               Condition-based email, SMS, and WhatsApp sequences that nurture undecided leads and automatically pause the second a prospect replies.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">No-Show Elimination Drips</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">No-Show Elimination Drips</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               Two-way attendance confirmations, pre-call case studies, and 1-click reschedule buttons that cut appointment no-shows by 50%+.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">24/7 Conversational AI Voice</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">24/7 Conversational AI Voice</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               AI phone receptionists that answer after-hours calls in a natural human voice, screen qualification details, and book straight to your live calendar.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#16253D] p-5 sm:p-8 hover:border-blue-400/40 transition">
-            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-400">Workflow &amp; Webhook Middleware</h3>
-            <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-8 hover:border-blue-500/40 hover:bg-white hover:shadow-lg transition">
+            <h3 className="text-lg sm:text-xl font-black uppercase text-blue-600">Workflow &amp; Webhook Middleware</h3>
+            <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
               Connecting your website, Stripe invoicing, Make.com, Zapier, and Slack alerts so information moves instantly without copy-pasting.
             </p>
           </div>
@@ -479,15 +544,16 @@ export default function LandingPage() {
             href={CONTACT.calendlyUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto text-center rounded-2xl bg-blue-600 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-xl font-extrabold text-white shadow-xl shadow-blue-600/40 transition hover:-translate-y-0.5 hover:brightness-110"
+            className="w-full sm:w-auto text-center rounded-2xl bg-blue-600 px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-xl font-extrabold text-white shadow-xl shadow-blue-600/30 transition hover:-translate-y-0.5 hover:brightness-110"
           >
             BOOK MY FREE SYSTEMS STRATEGY SESSION →
           </a>
-          <p className="text-xs sm:text-base text-slate-300">⚡ 100% Free • Custom Action Plan • Direct Engineer Conversation</p>
+          <p className="text-xs sm:text-base text-slate-500">⚡ 100% Free • Custom Action Plan • Direct Engineer Conversation</p>
         </div>
       </section>
-      {/* ==================== SECTION 3: PROVEN WORKFLOW ARCHITECTURES (WHITE) ==================== */}
-      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 overflow-hidden">
+
+      {/* ==================== SECTION 4: PROVEN WORKFLOW ARCHITECTURES (SOFT GREY) ==================== */}
+      <section className="bg-[#F8FAFC] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
         <span className="inline-block rounded-full border border-blue-600/30 bg-blue-50 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-blue-600 uppercase">
           PROVEN WORKFLOW ARCHITECTURES
         </span>
@@ -543,8 +609,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ==================== SECTION 4: SAMPLE SYSTEMS & REAL PROOF (SOFT GREY) ==================== */}
-      <section className="bg-[#F8FAFC] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-t border-slate-200 overflow-hidden">
+      {/* ==================== SECTION 5: SAMPLE SYSTEMS & REAL PROOF (CRISP WHITE) ==================== */}
+      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
         <span className="inline-block rounded-full border border-blue-600/30 bg-blue-50 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-blue-600 uppercase">
           VERIFIED PRODUCTION RESULTS
         </span>
@@ -657,8 +723,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ==================== SECTION 5: INTERACTIVE SYSTEM DIAGNOSTIC (WHITE) ==================== */}
-      <section id="funnel-guide" className="border-y border-slate-200 bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-slate-900 overflow-hidden">
+      {/* ==================== SECTION 6: INTERACTIVE SYSTEM DIAGNOSTIC (SOFT GREY) ==================== */}
+      <section id="funnel-guide" className="bg-[#F8FAFC] border-b border-slate-200 px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-slate-900 overflow-hidden">
         <div className="mx-auto grid max-w-6xl gap-8 lg:gap-14 lg:grid-cols-[.85fr_1.15fr] items-start">
           
           {/* Left Column */}
@@ -767,8 +833,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ==================== SECTION 6: WHO WE BUILD FOR (SOFT GREY) ==================== */}
-      <section className="bg-[#F8FAFC] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
+      {/* ==================== SECTION 7: WHO WE BUILD FOR (CRISP WHITE) ==================== */}
+      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
         <span className="inline-block rounded-full border border-blue-600/30 bg-blue-50 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-blue-600 uppercase">
           WHO WE BUILD FOR
         </span>
@@ -790,7 +856,7 @@ export default function LandingPage() {
           ].map((pill) => (
             <span
               key={pill}
-              className="w-full sm:w-auto rounded-xl sm:rounded-full border border-slate-200 bg-white px-5 sm:px-7 py-3 sm:py-3.5 text-sm sm:text-base lg:text-lg font-black text-slate-900 shadow-sm text-center"
+              className="w-full sm:w-auto rounded-xl sm:rounded-full border border-slate-200 bg-slate-50 px-5 sm:px-7 py-3 sm:py-3.5 text-sm sm:text-base lg:text-lg font-black text-slate-900 shadow-sm text-center"
             >
               {pill}
             </span>
@@ -798,73 +864,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ==================== SECTION 7: FOUNDER SPOTLIGHT (MIDNIGHT NAVY) ==================== */}
-      <section className="bg-[#101B2D] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-white overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-14 md:grid-cols-2">
-          {/* Founder Image */}
-          <div className="max-w-sm sm:max-w-md mx-auto w-full">
-            <img
-              src="/founder.jpg"
-              alt="Ariyo Emmanuel, Founder of Ariyx Systems"
-              width={784}
-              height={864}
-              loading="lazy"
-              className="w-full rounded-2xl sm:rounded-3xl shadow-2xl object-cover aspect-[4/5]"
-            />
-          </div>
-
-          {/* Bio */}
-          <div>
-            <span className="inline-block rounded-full border border-blue-400/60 bg-blue-500/10 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-white uppercase">
-              DIRECT ENGINEERING ACCESS
-            </span>
-
-            <h2 className="mt-4 sm:mt-6 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white">
-              Hi, I'm <span className="bg-gradient-to-r from-blue-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Emmanuel.</span>
-            </h2>
-
-            <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-normal opacity-95">
-              <p>I'm the founder and lead systems architect at Ariyx Systems.</p>
-              <p>
-                I help businesses turn their enquiries, ad spend, and manual processes into automated revenue engines—through custom GoHighLevel setups, sub-minute lead response, multi-channel nurture, and AI voice agents.
-              </p>
-              <p>Here is the reality most business owners discover too late:</p>
-              <p className="text-lg sm:text-xl md:text-2xl font-black text-white italic border-l-4 border-teal-400 pl-4 py-1">
-                "Most businesses don't have a lead problem. They have a plumbing problem."
-              </p>
-              <p>
-                Enquiries pour in from your website and ads, but disappear through delayed replies, disorganised inboxes, and forgotten follow-ups.
-              </p>
-              <p>
-                When you hire a bloated agency, you get sold by an account director and handed off to a junior intern who barely understands your sales workflow.
-              </p>
-              <p>
-                When you partner with Ariyx, you work directly with me. Every pipeline, webhook, database field, and automated sequence is engineered, tested, and launched personally.
-              </p>
-            </div>
-
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
-              <a
-                href={CONTACT.calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto text-center rounded-2xl bg-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-extrabold text-white hover:brightness-110 transition shadow-lg shadow-blue-600/30"
-              >
-                Book a Strategy Call →
-              </a>
-              <Link
-                to="/about"
-                className="text-sm sm:text-base text-slate-300 hover:text-white underline underline-offset-4 transition text-center"
-              >
-                Read our full credentials &amp; background
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== SECTION 8: 30-MIN STRATEGY SESSION (WHITE) ==================== */}
-      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 overflow-hidden">
+      {/* ==================== SECTION 8: 30-MIN STRATEGY SESSION (SOFT GREY) ==================== */}
+      <section className="bg-[#F8FAFC] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
         <span className="inline-block rounded-full border border-blue-600/30 bg-blue-50 px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-blue-600 uppercase">
           COMPLIMENTARY 30-MINUTE PIPELINE DIAGNOSTIC
         </span>
@@ -910,8 +911,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ==================== SECTION 9: THE ANTI-PITCH POLICY (SOFT GREY) ==================== */}
-      <section className="bg-[#F8FAFC] px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-y border-slate-200 overflow-hidden">
+      {/* ==================== SECTION 9: THE ANTI-PITCH POLICY (CRISP WHITE) ==================== */}
+      <section className="bg-white px-4 sm:px-6 py-14 sm:py-20 lg:py-28 text-center text-slate-900 border-b border-slate-200 overflow-hidden">
         <h2 className="mx-auto max-w-5xl text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-950 leading-tight">
           This isn't a <span className="text-blue-600">"get you on Zoom and hard-close you"</span> call.
         </h2>
